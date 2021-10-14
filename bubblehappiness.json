@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 500,
+  "width": 800,
+  "height": 600,
   "title": "Happiness Score of each Country agaisnt Alcohol per capita",
   "data": {
     "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/HappinessAlcoholConsumption.csv"
