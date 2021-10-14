@@ -3,3 +3,11 @@ html{
     font-size: 1rem;
     color: Gray;
   }
+
+h1 {text-align: center;}
+p{text-align: center;}
+
+.child {
+    margin: 0 auto;
+  }
+  
