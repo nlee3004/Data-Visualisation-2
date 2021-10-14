@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 800,
+  "title": "How Alcohol Consumption Affects The Income Per Person",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/gapminder_alcohol.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "alcconsumption",
+      "type": "quantitative",
+      "title": "Alcohol Consumption (litres)",
+      "scale": {"type": "linear", "domain": [0, 23]}
+    },
+    "y": {
+      "aggregate": "median",
+      "field": "incomeperperson",
+      "type": "quantitative",
+      "title": "Income per person"
+    },
+    "color": {"value": "#ff9900"}
+  },
+  "config": {}
+}

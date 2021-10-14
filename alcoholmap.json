@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Alcohol consumption",
+  "width": 800,
+  "height": 600,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/custom.geo.topojson",
+        "format": {"type": "topojson", "feature": "custom.geo"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/ProcessedHappinessAlcohol.csv"
+            },
+            "key": "Country",
+            "fields": ["Alcohol_PerCapita"]
+          }
+        },
+        {"calculate": "datum.Alcohol_PerCapita", "as": "Alcohol"}
+      ],
+      "projection": {"type": "equirectangular"},
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Alcohol_PerCapita",
+          "type": "quantitative",
+          "scale": {"scheme": "goldorange"},
+          "title": "Alcohol consumption"
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Country"},
+          {
+            "field": "Alcohol_PerCapita",
+            "type": "quantitative",
+            "title": "Alcohol consumption"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/ProcessedHappinessAlcohol.csv"
+      },
+      "transform": [
+        {"window": [{"op": "rank", "as": "ranking"}]},
+        {"filter": "datum.ranking ==1"},
+        {
+          "calculate": "'Country with the highest alcohol consumption is:  '+datum['Country']+'='+ datum['Alcohol_PerCapita']",
+          "as": "text_annotation"
+        }
+      ],
+      "encoding": {"text": {"field": "text_annotation"}},
+      "layer": [{"mark": {"type": "text", "align": "left", "dy": -200}}]
+    }
+  ],
+  "config": {}
+}

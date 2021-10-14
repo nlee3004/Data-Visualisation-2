@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/gapminder_alcohol.csv"
+  },
+  "mark": "rect",
+  "width": 600,
+  "height": 600,
+  "encoding": {
+    "x": {
+      "bin": {"maxbins": 60},
+      "field": "alcconsumption",
+      "type": "quantitative",
+      "title": "Alcohol Consumption"
+    },
+    "y": {
+      "bin": {"maxbins": 40},
+      "field": "suicideper100th",
+      "type": "quantitative",
+      "title": "Suicides per 100k deaths"
+    },
+    "color": {"field": "country", "type": "nominal"},
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title": "Country"},
+      {
+        "field": "alcconsumption",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Alcohol Consumption"
+      },
+      {
+        "field": "suicideper100th",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Suicides per 100k deaths"
+      }
+    ]
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}

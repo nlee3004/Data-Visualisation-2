@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 500,
+  "title": "Happiness Score of each Country agaisnt Alcohol per capita",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/HappinessAlcoholConsumption.csv"
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "params": [
+        {
+          "name": "Country",
+          "select": {"type": "point", "fields": ["Country"]},
+          "bind": "legend"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Alcohol_PerCapita",
+          "type": "quantitative",
+          "title": "Alcohol Per Capita",
+          "axis": {"tickCount": 6},
+          "scale": {"type": "linear", "domain": [0, 700]}
+        },
+        "y": {
+          "field": "HappinessScore",
+          "title": "HappinessScore",
+          "type": "quantitative",
+          "axis": {"tickCount": 6},
+          "scale": {"type": "linear", "domain": [3, 8]}
+        },
+        "color": {"field": "Country", "type": "nominal"},
+        "size": {
+          "field": "GDP_PerCapita",
+          "type": "quantitative",
+          "scale": {"type": "log", "domain": [1, 1000]}
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Alcohol_PerCapita", "type": "quantitative", "format": ","},
+          {"field": "HappinessScore", "type": "quantitative", "format": ","}
+        ],
+        "opacity": {"condition": {"param": "Country", "value": 1}, "value": 0.1}
+      }
+    }
+  ],
+  "config": {}
+}
