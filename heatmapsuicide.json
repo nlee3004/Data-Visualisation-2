@@ -6,6 +6,13 @@
   "mark": "rect",
   "width": 800,
   "height": 600,
+  "params": [
+        {
+          "name": "Country",
+          "select": {"type": "point", "fields": ["country"]},
+          "bind": "legend"
+        }
+      ],
   "encoding": {
     "x": {
       "bin": {"maxbins": 60},
@@ -19,7 +26,7 @@
       "type": "quantitative",
       "title": "Suicides per 100k deaths"
     },
-    "color": {"field": "country", "type": "nominal"},
+    "color": {"field": "country", "type": "nominal","title":"Country"},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
       {
@@ -34,7 +41,9 @@
         "format": ",",
         "title": "Suicides per 100k deaths"
       }
-    ]
+      
+    ],
+    "opacity": {"condition": {"param": "Country", "value": 1}, "value": 0.1}
   },
   "config": {"view": {"stroke": "transparent"}}
 }
