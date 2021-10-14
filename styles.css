@@ -4,8 +4,12 @@ html{
     
   }
 
-h1 {text-align: center;color: white;  font-size: 50px;
+h1 {text-align: center;color:honeydew;  font-size: 60px
 }
-h2{text-align: center;color: white;background-color:grey;}
+h2{text-align: center;color: white;background-color:grey;font-size: 30px}
 
-body{text-align: center;}
+body{
+  background-color: bisque;
+  margin-left: 150px;
+  margin-right: 150px;}
+

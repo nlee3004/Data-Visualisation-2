@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 815,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/HappinessAlcoholConsumption.csv"

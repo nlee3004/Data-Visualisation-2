@@ -1,10 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 930,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/gapminder_alcohol.csv"
   },
+  "params": [
+    {
+      "name": "Alcohol_filter",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 55000,
+        "step": 5000,
+        "name": "Minimum Alcohol Consumption (in litres): "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.incomeperperson>Alcohol_filter"}],
   "mark": "bar",
   "encoding": {
     "x": {
