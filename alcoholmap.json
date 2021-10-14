@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Alcohol consumption",
   "width": 800,
   "height": 600,
   "layer": [
