@@ -40,7 +40,8 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Alcohol_PerCapita", "type": "quantitative", "format": ","},
-          {"field": "HappinessScore", "type": "quantitative", "format": ","}
+          {"field": "HappinessScore", "type": "quantitative", "format": ","},
+          {"field": "GDP_PerCapita", "type": "quantitative", "format": ","}
         ],
         "opacity": {"condition": {"param": "Country", "value": 1}, "value": 0.1}
       }
