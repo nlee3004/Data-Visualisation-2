@@ -6,4 +6,6 @@ html{
 
 h1 {text-align: center;color: white;  font-size: 50px;
 }
-h2{text-align: center;color: white;}
+h2{text-align: center;color: white;background-color:grey;}
+
+body{text-align: center;}
