@@ -1,11 +1,11 @@
 html{
     font-family: "Montserrat", sans-serif;  
     font-size: 1rem;
-    color: Gray;
+    
   }
 
 h1 {text-align: center;}
-p{text-align: center;}
+h2{text-align: center;color: white;}
 
 .child {
     margin: 0 auto;
