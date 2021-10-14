@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/nlee3004/Data-Visualisation-2/main/gapminder_alcohol.csv"
   },
   "mark": "rect",
-  "width": 600,
+  "width": 800,
   "height": 600,
   "encoding": {
     "x": {
